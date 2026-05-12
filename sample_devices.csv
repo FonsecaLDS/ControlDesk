@@ -1,0 +1,4 @@
+Item ID,Device Name,Type,Location,Protocol,Address,Status,Firmware Version,Model,Notes,Error Count
+RADAR_IF,Radar Interface,Gateway,Bridge,NMEA-0183,BRG-03,Online,2.8.1,RIF-200,Imported bridge radar interface sample,0
+BILGE_ALM,Bilge Alarm Module,Alarm Module,Alarm System,CANopen,ALM-03,Warning,1.6.4,BAM-12,Imported bilge alarm channel sample,1
+FUEL_MON,Fuel Monitor,Sensor,Engine Room,Modbus RTU,ENG-04,Online,3.0.2,FM-90,Imported fuel level monitor sample,0
