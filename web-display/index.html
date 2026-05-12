@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ControlDesk Web Display</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="display-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">ControlDesk Web Display</p>
+        <h1>Vessel System Monitor</h1>
+      </div>
+      <div class="header-status">
+        <span id="connectionBadge" class="status-badge status-online">SIMULATING</span>
+        <span id="clock" class="clock">--:--:--</span>
+      </div>
+    </header>
+
+    <main class="dashboard-grid">
+      <section class="panel overview-panel" aria-labelledby="overviewTitle">
+        <div class="panel-header">
+          <h2 id="overviewTitle">System Overview</h2>
+          <span id="selectedDeviceLabel" class="panel-meta">Selected: AHD_570</span>
+        </div>
+        <div id="overviewCards" class="overview-grid"></div>
+      </section>
+
+      <section class="panel device-panel" aria-labelledby="devicesTitle">
+        <div class="panel-header">
+          <h2 id="devicesTitle">Device List</h2>
+          <span class="panel-meta">Click a row to inspect diagnostics</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Device ID</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Protocol</th>
+                <th>Address</th>
+                <th>Status</th>
+                <th>Signal</th>
+                <th>Last Seen</th>
+              </tr>
+            </thead>
+            <tbody id="deviceTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel diagnostics-panel" aria-labelledby="diagnosticsTitle">
+        <div class="panel-header">
+          <h2 id="diagnosticsTitle">Diagnostics</h2>
+          <span id="diagnosticDeviceName" class="panel-meta">Display Panel AHD-570</span>
+        </div>
+        <div id="diagnosticGrid" class="diagnostic-grid"></div>
+      </section>
+
+      <section class="panel alarm-panel" aria-labelledby="alarmsTitle">
+        <div class="panel-header">
+          <h2 id="alarmsTitle">Alarms</h2>
+          <span id="alarmSummary" class="panel-meta">0 active</span>
+        </div>
+        <div id="alarmList" class="alarm-list"></div>
+      </section>
+
+      <section class="panel controls-panel" aria-labelledby="controlsTitle">
+        <div class="panel-header">
+          <h2 id="controlsTitle">Controls</h2>
+          <span id="busMode" class="panel-meta">Local simulation</span>
+        </div>
+        <div class="control-grid">
+          <button id="pauseButton" type="button">Pause Simulation</button>
+          <button id="warningButton" type="button">Simulate Warning</button>
+          <button id="clearLogsButton" type="button">Clear Logs</button>
+        </div>
+      </section>
+
+      <section class="panel log-panel" aria-labelledby="logTitle">
+        <div class="panel-header">
+          <h2 id="logTitle">Protocol / Log Console</h2>
+          <span id="packetPreview" class="panel-meta">$DEV,...#</span>
+        </div>
+        <pre id="logConsole" class="log-console" aria-live="polite"></pre>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
